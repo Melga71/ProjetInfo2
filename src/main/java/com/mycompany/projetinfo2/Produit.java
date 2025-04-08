@@ -10,6 +10,7 @@ public class Produit {
         this.codeProduit = codeProduit;
         this.dProduit = dProduit;
     }
+    //Méthodes 
     
     //Getters & Setters
 

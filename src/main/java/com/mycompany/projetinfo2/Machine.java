@@ -22,6 +22,8 @@ public class Machine {
         this.t = t;
         this.dispo = dispo;
     }
+    //Méthodes 
+
     
     //Getters & Setters
     public String getRefMachine() {

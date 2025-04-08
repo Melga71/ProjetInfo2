@@ -5,13 +5,15 @@ public class Poste {
     //Attributs
     int refPoste;
     String dPoste;
-    ArrayList<Machine> listMachines = new ArrayList<Machine>();
+    ArrayList<Machine> listeMachines = new ArrayList<Machine>();
     
     //Constructeur
     public Poste(int refPoste, String dPoste) {
         this.refPoste = refPoste;
         this.dPoste = dPoste;
     }
+     //Méthodes 
+
     
     //Getters & Setters
     public int getRefPoste() {
@@ -29,15 +31,6 @@ public class Poste {
     public void setdPoste(String dPoste) {
         this.dPoste = dPoste;
     }
-
-    public ArrayList<Machine> getListMachines() {
-        return listMachines;
-    }
-
-    public void setListMachines(ArrayList<Machine> listMachines) {
-        this.listMachines = listMachines;
-    }
-    
     
     
 }
