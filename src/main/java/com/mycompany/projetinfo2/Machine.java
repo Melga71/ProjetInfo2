@@ -5,7 +5,7 @@ public class Machine extends Equipement {
     String refMachine;
     String dMachine;
     String type;
-    String etat,
+    String etat;
     float x;
     float y;
     float c;
@@ -26,10 +26,14 @@ public class Machine extends Equipement {
         this.etat = etat;
     }
     //Méthodes 
-    
+     @Override
+    public void afficher() {
+        System.out.println("Machine: " + refEquipement + ", " + dEquipement);
+    }
 
     
     //Getters & Setters
+
     public String getRefMachine() {
         return refMachine;
     }
@@ -52,6 +56,14 @@ public class Machine extends Equipement {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
     public float getX() {
@@ -86,17 +98,30 @@ public class Machine extends Equipement {
         this.t = t;
     }
 
+    public boolean isDispo() {
+        return dispo;
+    }
+
     public void setDispo(boolean dispo) {
         this.dispo = dispo;
     }
 
-    public String getEtat() {
-        return etat;
+    public String getRefEquipement() {
+        return refEquipement;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
+    public void setRefEquipement(String refEquipement) {
+        this.refEquipement = refEquipement;
+    }
+
+    public String getdEquipement() {
+        return dEquipement;
+    }
+
+    public void setdEquipement(String dEquipement) {
+        this.dEquipement = dEquipement;
     }
     
     
 }
+

@@ -7,6 +7,7 @@ public abstract class Equipement {
     
     //Classe abstraite, pas de constructeur
     //Méthodes
+    public abstract void afficher();
     
     
     

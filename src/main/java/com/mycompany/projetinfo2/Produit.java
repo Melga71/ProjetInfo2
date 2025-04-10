@@ -11,7 +11,9 @@ public class Produit {
         this.dProduit = dProduit;
     }
     //Méthodes 
-    
+    public void afficherProduit() {
+        System.out.println("Produit: " + codeProduit + ", " + dProduit);
+    }
     //Getters & Setters
 
     public int getCodeProduit() {

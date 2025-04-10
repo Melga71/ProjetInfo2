@@ -6,15 +6,20 @@ public class Operateur {
     String nom;
     String prenom;
     String competences;
+    boolean occupe;
     //Constructeur
 
-    public Operateur(int code, String nom, String prenom, String competences) {
+    public Operateur(int code, String nom, String prenom, String competences, boolean occupe) {
         this.code = code;
         this.nom = nom;
         this.prenom = prenom;
         this.competences = competences;
+        this.occupe = false;
     }
-    
+    // Méthodes
+    public void changerStatut(boolean statut) {
+        this.occupe = statut;
+    }
     //Getters & Setters
 
     public int getCode() {
@@ -47,6 +52,14 @@ public class Operateur {
 
     public void setCompetences(String competences) {
         this.competences = competences;
+    }
+
+    public boolean isOccupe() {
+        return occupe;
+    }
+
+    public void setOccupe(boolean occupe) {
+        this.occupe = occupe;
     }
     
 }

@@ -4,19 +4,25 @@ public class Operation {
     //Attributs
     String refOperation;
     String dOperation; 
-    Equipement refEquipement;
+    Equipement equipement;
     float dureeOperation;
     
     //Constructeur
-    public Operation(String refOperation, String dOperation, Equipement refEquipement, float dureeOperation) {
+    public Operation(String refOperation, String dOperation, Equipement equipement, float dureeOperation) {
         this.refOperation = refOperation;
         this.dOperation = dOperation;
-        this.refEquipement = refEquipement;
+        this.equipement = equipement;
         this.dureeOperation = dureeOperation;
     }
     
     //Méthodes
-    
+    public float getCout() {
+        if (equipement instanceof Machine) {
+            Machine m = (Machine) equipement;
+            return dureeOperation * m.getC();
+        }
+        return 0;
+    }
     
     
     
@@ -39,7 +45,7 @@ public class Operation {
 
 
     public void setRefEquipement(Equipement refEquipement) {
-        this.refEquipement = refEquipement;
+        this.equipement = equipement;
     }
 
     public float getDureeOperation() {

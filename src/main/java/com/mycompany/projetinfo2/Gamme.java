@@ -4,8 +4,8 @@ import java.util.ArrayList;
 public class Gamme {
     //Attributs
     String refGamme;
-    ArrayList<Operation> listeOperations = new ArrayList<Operation>();
-    ArrayList<Equipement> listeEquipement = new ArrayList<Equipement>();
+    ArrayList<Operation> listeOperations = new ArrayList<>();
+    ArrayList<Equipement> listeEquipement = new ArrayList<>();
     
     //Constructeur
     public Gamme(String refGamme) {
@@ -13,7 +13,28 @@ public class Gamme {
     }
     
     //Méthodes
-    
+     public void ajouterOperation(Operation op) {
+        listeOperations.add(op);
+    }
+
+    public float dureeTotale() {
+        float total = 0;
+        for (Operation op : listeOperations) total += op.dureeOperation;
+        return total;
+    }
+
+    public float coutTotal() {
+        float total = 0;
+        for (Operation op : listeOperations) total += op.getCout();
+        return total;
+    }
+
+    public void afficherGamme() {
+        System.out.println("Gamme: " + refGamme);
+        for (Operation op : listeOperations) {
+            System.out.println("Op: " + op.refOperation + ", Duree: " + op.dureeOperation + ", Cout: " + op.getCout());
+        }
+    }
     
     
     
