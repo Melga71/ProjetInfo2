@@ -1,7 +1,7 @@
 package com.mycompany.projetinfo2;
 import java.util.ArrayList;
 
-public class Poste {
+public class Poste extends Equipement{
     //Attributs
     int refPoste;
     String dPoste;

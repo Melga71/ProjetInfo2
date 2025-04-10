@@ -4,11 +4,11 @@ public class Operation {
     //Attributs
     String refOperation;
     String dOperation; 
-    String refEquipement;
+    Equipement refEquipement;
     float dureeOperation;
     
     //Constructeur
-    public Operation(String refOperation, String dOperation, String refEquipement, float dureeOperation) {
+    public Operation(String refOperation, String dOperation, Equipement refEquipement, float dureeOperation) {
         this.refOperation = refOperation;
         this.dOperation = dOperation;
         this.refEquipement = refEquipement;
@@ -37,11 +37,8 @@ public class Operation {
         this.dOperation = dOperation;
     }
 
-    public String getRefEquipement() {
-        return refEquipement;
-    }
 
-    public void setRefEquipement(String refEquipement) {
+    public void setRefEquipement(Equipement refEquipement) {
         this.refEquipement = refEquipement;
     }
 
