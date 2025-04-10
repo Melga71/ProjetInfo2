@@ -9,6 +9,7 @@ public abstract class Equipement {
     //Méthodes
     
     
+    
     //Getters & Setters
     public String getRefEquipement() {
         return refEquipement;

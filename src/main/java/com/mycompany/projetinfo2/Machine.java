@@ -23,6 +23,7 @@ public class Machine {
         this.dispo = dispo;
     }
     //Méthodes 
+    
 
     
     //Getters & Setters
