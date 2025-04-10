@@ -1,18 +1,20 @@
 package com.mycompany.projetinfo2;
 
-public class Machine {
+public class Machine extends Equipement {
     //Attributs
     String refMachine;
     String dMachine;
     String type;
+    String etat,
     float x;
     float y;
     float c;
     float t;
-    int dispo;
+    boolean dispo;
+    
     
     //Constructeur
-    public Machine(String refMachine, String dMachine, String type, float x, float y, float c, float t, int dispo) {
+    public Machine(String refMachine, String dMachine, String type, float x, float y, float c, float t, boolean dispo, String etat) {
         this.refMachine = refMachine;
         this.dMachine = dMachine;
         this.type = type;
@@ -21,6 +23,7 @@ public class Machine {
         this.c = c;
         this.t = t;
         this.dispo = dispo;
+        this.etat = etat;
     }
     //Méthodes 
     
@@ -83,12 +86,16 @@ public class Machine {
         this.t = t;
     }
 
-    public int getDispo() {
-        return dispo;
+    public void setDispo(boolean dispo) {
+        this.dispo = dispo;
     }
 
-    public void setDispo(int dispo) {
-        this.dispo = dispo;
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
     
     
