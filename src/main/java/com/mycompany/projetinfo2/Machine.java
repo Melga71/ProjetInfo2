@@ -28,7 +28,13 @@ public class Machine extends Equipement {
     //Méthodes 
      @Override
     public void afficher() {
-        System.out.println("Machine: " + refEquipement + ", " + dEquipement);
+        System.out.println("Machine: " + refMachine + ", " + dMachine);
+    }
+    public float getCoutHoraire() { 
+        return c; 
+    }
+    public float getDuree() { 
+        return t; 
     }
 
     

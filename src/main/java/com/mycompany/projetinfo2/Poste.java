@@ -3,14 +3,14 @@ import java.util.ArrayList;
 
 public class Poste extends Equipement{
     //Attributs
-    int refPoste;
+    String refPoste;
     String dPoste;
     ArrayList<Machine> listeMachines = new ArrayList<>();
     
     //Constructeur
      public Poste(String refPoste, String dPoste) {
-        this.refEquipement = refPoste;
-        this.dEquipement = dPoste;
+        this.refPoste = refPoste;
+        this.dPoste = dPoste;
     }
      //Méthodes 
      public void ajouterMachine(Machine m) {
@@ -25,11 +25,11 @@ public class Poste extends Equipement{
 
     
     //Getters & Setters
-    public int getRefPoste() {
+    public String getRefPoste() {
         return refPoste;
     }
 
-    public void setRefPoste(int refPoste) {
+    public void setRefPoste(String refPoste) {
         this.refPoste = refPoste;
     }
 

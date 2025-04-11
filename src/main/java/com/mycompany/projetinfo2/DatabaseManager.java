@@ -62,6 +62,16 @@ public class DatabaseManager {
                     refGamme TEXT PRIMARY KEY
                 );
                 """;
+            // Table Operateur
+            String sqlOperateur ="""
+                 CREATE TABLE IF NOT EXISTS Operateur (
+                    code INTEGER PRIMARY KEY,
+                    nom TEXT,
+                    prenom TEXT,
+                    competences TEXT
+                    );
+                    """;
+                    
 
             // Table de liaison Gamme - Operation
             String sqlGammeOperation = """

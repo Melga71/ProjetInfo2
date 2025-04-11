@@ -9,7 +9,7 @@ public class Operateur {
     boolean occupe;
     //Constructeur
 
-    public Operateur(int code, String nom, String prenom, String competences, boolean occupe) {
+    public Operateur(int code, String nom, String prenom, String competences) {
         this.code = code;
         this.nom = nom;
         this.prenom = prenom;

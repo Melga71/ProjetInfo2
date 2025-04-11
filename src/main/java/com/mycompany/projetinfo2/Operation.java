@@ -55,6 +55,14 @@ public class Operation {
     public void setDureeOperation(float dureeOperation) {
         this.dureeOperation = dureeOperation;
     }
+
+    public Equipement getEquipement() {
+        return equipement;
+    }
+
+    public void setEquipement(Equipement equipement) {
+        this.equipement = equipement;
+    }
     
     
     
