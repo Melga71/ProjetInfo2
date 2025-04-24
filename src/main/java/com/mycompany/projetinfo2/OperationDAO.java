@@ -21,6 +21,10 @@ public class OperationDAO {
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, o.getRefOperation());
             pstmt.setString(2, o.getdOperation());
+            if (o.getEquipement() == null) {
+            throw new IllegalArgumentException("L'opération doit avoir un équipement non nul !");
+            }
+
             pstmt.setString(3, o.getEquipement().getRefEquipement()); // liaison par référence
             pstmt.setFloat(4, o.getDureeOperation());
 

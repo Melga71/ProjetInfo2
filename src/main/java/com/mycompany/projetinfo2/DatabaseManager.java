@@ -71,6 +71,7 @@ public class DatabaseManager {
                     competences TEXT
                     );
                     """;
+            stmt.execute(sqlOperateur);
                     
 
             // Table de liaison Gamme - Operation

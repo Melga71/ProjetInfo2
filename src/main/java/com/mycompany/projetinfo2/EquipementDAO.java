@@ -16,6 +16,8 @@ public class EquipementDAO {
 
     public Equipement getEquipementParReference(String ref) {
         // 1. Cherche dans Machine
+        System.out.println("Recherche équipement : " + ref);
+
         String sqlMachine = "SELECT * FROM Machine WHERE refMachine = ?";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sqlMachine)) {
@@ -55,6 +57,8 @@ public class EquipementDAO {
         } catch (SQLException e) {
             System.out.println("Erreur recherche poste : " + e.getMessage());
         }
+        System.out.println("Aucun équipement trouvé avec la référence : " + ref);
+
 
         return null; // Aucun équipement trouvé
     }
