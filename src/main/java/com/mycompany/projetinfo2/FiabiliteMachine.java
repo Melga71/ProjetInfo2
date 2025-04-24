@@ -5,6 +5,8 @@ import java.nio.file.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.sql.*;
+
 
 public class FiabiliteMachine {
 
@@ -35,6 +37,7 @@ public class FiabiliteMachine {
         String fichier = "suiviMaintenance.txt";
         Map<String, StatMachine> stats = new HashMap<>();
         Map<String, LocalTime> enPanneDepuis = new HashMap<>();
+          List<StatMachine> machinesTriees = new ArrayList<>(stats.values());
 
         try {
             List<String> lignes = Files.readAllLines(Paths.get(fichier));
@@ -65,7 +68,7 @@ public class FiabiliteMachine {
             }
 
             // Affichage trié par fiabilité décroissante
-            List<StatMachine> machinesTriees = new ArrayList<>(stats.values());
+          
             machinesTriees.sort(Comparator.comparingDouble(StatMachine::getFiabilite).reversed());
 
             System.out.println("=== Fiabilité des machines ===");
@@ -76,5 +79,23 @@ public class FiabiliteMachine {
         } catch (IOException e) {
             System.out.println("Erreur lecture fichier : " + e.getMessage());
         }
+        // Connexion pour insertion des résultats
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:atelier.db")) {
+        String insert = "INSERT INTO Fiabilite(refMachine, fiabilite, dateCalc) VALUES (?, ?, ?)";
+        PreparedStatement pstmt = conn.prepareStatement(insert);
+        String dateCalc = LocalDate.now().toString();
+
+        for (StatMachine stat : machinesTriees) {
+            pstmt.setString(1, stat.machine);
+            pstmt.setDouble(2, stat.getFiabilite() * 100);
+            pstmt.setString(3, dateCalc);
+            pstmt.executeUpdate();
+    }
+
+    System.out.println("Résultats de fiabilité enregistrés dans la base !");
+} catch (SQLException e) {
+    System.out.println("Erreur lors de l'enregistrement des fiabilités : " + e.getMessage());
+}
+
     }
 }

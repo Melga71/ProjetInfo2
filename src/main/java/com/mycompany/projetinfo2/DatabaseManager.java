@@ -72,6 +72,18 @@ public class DatabaseManager {
                     );
                     """;
             stmt.execute(sqlOperateur);
+            
+            // Table Fiabilite
+            String sqlFiabilite = """
+                 CREATE TABLE IF NOT EXISTS Fiabilite (
+                     refMachine TEXT,
+                     fiabilite REAL,
+                     dateCalc TEXT
+                     );
+                     """;
+             stmt.execute(sqlFiabilite);
+  
+
                     
 
             // Table de liaison Gamme - Operation
