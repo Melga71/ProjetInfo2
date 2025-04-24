@@ -3,7 +3,7 @@ package com.mycompany.projetinfo2;
 public class Produit {
     //Attributs
     int codeProduit;
-    String dProduit;
+    String dProduit; //designation
     
     //Constructeur
     public Produit(int codeProduit, String dProduit) {
